@@ -10,7 +10,6 @@ import Home from './Home'
 import Users from './Users'
 import About from './About'
 
-
 export default Menu => {
   return (
   <Router>
