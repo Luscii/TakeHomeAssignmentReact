@@ -1,4 +1,4 @@
-import {takeEvery, call, put, delay} from "redux-saga/effects"
+import {takeEvery, put, delay} from "redux-saga/effects"
 
 import {
   actions as appActions,
