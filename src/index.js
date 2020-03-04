@@ -6,9 +6,13 @@ import createSagaMiddleware from "redux-saga";
 
 import app from './redux/reducers/appReducer';
 import users from './redux/reducers/usersReducer';
+import albums from './redux/reducers/albumsReducer';
+
 
 import appSaga from './redux/sagas/appSaga';
 import usersSaga from './redux/sagas/usersSaga';
+import albumsSaga from './redux/sagas/albumsSaga';
+
 
 import App from './App';
 
@@ -22,12 +26,14 @@ const store = createStore(
   combineReducers({
     app,
     users,
+    albums,
   }),
   composeEnhancer(applyMiddleware(sagaMiddleware)),
 )
 
 sagaMiddleware.run(appSaga);
 sagaMiddleware.run(usersSaga);
+sagaMiddleware.run(albumsSaga);
 
 
 ReactDOM.render(

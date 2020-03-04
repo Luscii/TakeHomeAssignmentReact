@@ -8,7 +8,7 @@ Link
 
 import Home from './Home'
 import Users from './Users'
-import About from './About'
+import Albums from './Albums'
 
 export default Menu => {
   return (
@@ -20,7 +20,7 @@ export default Menu => {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <Link to="/albums">Albums</Link>
         </li>
         <li>
           <Link to="/users">Users</Link>
@@ -29,8 +29,8 @@ export default Menu => {
     </nav>
 
     <Switch>
-      <Route path="/about">
-        <About />
+      <Route path="/albums">
+        <Albums />
       </Route>
       <Route path="/users">
         <Users />
