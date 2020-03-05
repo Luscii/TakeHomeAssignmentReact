@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux'
 import {actions} from '../actions/membersActions';
 
 const members = (state = [], action) => {

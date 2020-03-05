@@ -63,10 +63,14 @@ const albumsData = [
   },
 ]
 
-function* fetchAlbums() {
-  yield put(appActionCreators.createDisplayLoading("Loading Albums..."));
+function* getAlbumsFromAPI() {
   yield delay(2000);
   yield put(albumsActionCreators.createAlbumsUpdated(albumsData));
+}
+
+function* fetchAlbums() {
+  yield put(appActionCreators.createDisplayLoading("Loading Albums..."));
+  yield getAlbumsFromAPI();
   yield put(appActionCreators.createHideLoading());
 }
 

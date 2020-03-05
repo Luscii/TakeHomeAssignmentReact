@@ -7,10 +7,14 @@ import {
 
 import { actionCreators as appActionCreators } from "../actions/appActions"
 
-function* fetchMembersList() {
-  yield put(appActionCreators.createDisplayLoading("Loading Band Members..."));
+function* getMembersFromAPI() {
   yield delay(2000);
   yield put(membersActionCreators.createMembersListUpdated(["John", "Paul", "George", "Ringo"]));
+}
+
+function* fetchMembersList() {
+  yield put(appActionCreators.createDisplayLoading("Loading Band Members..."));
+  yield getMembersFromAPI();
   yield put(appActionCreators.createHideLoading());
 }
 
