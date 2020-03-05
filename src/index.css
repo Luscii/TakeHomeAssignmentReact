@@ -7,11 +7,30 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+nav {
+  background-color: grey;
+  padding: 10px;
+  margin-top: 10px;
+  width: 25%;
 }
 
 .App {
   margin-left: 10px;
+}
+
+.loader {
+  background-color: lightsteelblue;
+  padding: 10px;
+  border-style: groove;
+  border-color: steelblue;
+  width: 200px;
+}
+
+.album {
+  background-color: mintcream;
+  border-style: solid;
+  border-color: skyblue;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 200px;
 }

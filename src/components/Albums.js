@@ -24,7 +24,7 @@ export default function Albums() {
     { albums.length > 0 &&
       <div>
       { albums.map((album) =>
-        <div>
+        <div class="album">
           <h3>{album.title}</h3>
           Released: {album.released}
         </div>
