@@ -7,7 +7,7 @@ Link
 } from "react-router-dom";
 
 import Home from './Home'
-import Users from './Users'
+import BandMembers from './BandMembers'
 import Albums from './Albums'
 
 export default Menu => {
@@ -20,10 +20,10 @@ export default Menu => {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/albums">Albums</Link>
+          <Link to="/members">Band Members</Link>
         </li>
         <li>
-          <Link to="/users">Users</Link>
+          <Link to="/albums">Albums</Link>
         </li>
       </ul>
     </nav>
@@ -32,8 +32,8 @@ export default Menu => {
       <Route path="/albums">
         <Albums />
       </Route>
-      <Route path="/users">
-        <Users />
+      <Route path="/members">
+        <BandMembers />
       </Route>
       <Route path="/">
         <Home />

@@ -19,22 +19,4 @@ const loading = (state = { isLoading: false, text: "" }, action) => {
   }
 }
 
-const errorMessage = (state = {showErrorMessage: false, text: "" }, action) => {
-  switch (action.type) {
-    case actions.displayErrorMessage:
-      return {
-        ...state,
-        showErrorMessage: true,
-        text: action.text,
-      };
-    case actions.hideErrorMessage:
-      return {
-        ...state,
-        showErrorMessage: false,
-      }
-    default:
-      return state;
-  }
-}
-
-export default combineReducers({loading, errorMessage});
+export default combineReducers({loading});

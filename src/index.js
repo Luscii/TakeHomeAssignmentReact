@@ -5,14 +5,12 @@ import {Provider} from "react-redux";
 import createSagaMiddleware from "redux-saga";
 
 import app from './redux/reducers/appReducer';
-import users from './redux/reducers/usersReducer';
+import members from './redux/reducers/membersReducer';
 import albums from './redux/reducers/albumsReducer';
 
 
-import appSaga from './redux/sagas/appSaga';
-import usersSaga from './redux/sagas/usersSaga';
+import membersSaga from './redux/sagas/membersSaga';
 import albumsSaga from './redux/sagas/albumsSaga';
-
 
 import App from './App';
 
@@ -25,16 +23,14 @@ const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
   combineReducers({
     app,
-    users,
+    members,
     albums,
   }),
   composeEnhancer(applyMiddleware(sagaMiddleware)),
 )
 
-sagaMiddleware.run(appSaga);
-sagaMiddleware.run(usersSaga);
+sagaMiddleware.run(membersSaga);
 sagaMiddleware.run(albumsSaga);
-
 
 ReactDOM.render(
   <Provider store={store}>
