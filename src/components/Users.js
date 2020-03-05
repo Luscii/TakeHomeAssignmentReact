@@ -21,13 +21,13 @@ export default function Users() {
     <h2>Users</h2>
     { loading.isLoading && <Loader text={loading.text} /> }
 
-    { users.length > 0 ?
+    { users.length > 0 &&
       <ul>
       { users.map((user) =>
        <li>{user}</li>
-    ) }
+    )}
       </ul>
-    : <p>No users loaded</p> }
+    }
     </div>
   );
 }

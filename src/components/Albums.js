@@ -21,7 +21,7 @@ export default function Albums() {
     <h2>Albums</h2>
     { loading.isLoading && <Loader text={loading.text} /> }
 
-    { albums.length > 0 ?
+    { albums.length > 0 &&
       <div>
       { albums.map((album) =>
         <div>
@@ -30,7 +30,7 @@ export default function Albums() {
         </div>
     ) }
       </div>
-    : <p>No albums loaded</p> }
+    }
     </div>
   );
 }
