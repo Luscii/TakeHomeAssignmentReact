@@ -9,10 +9,10 @@ Your assignment is to improve te code base of this simple web application. You s
 ## Detailed Instructions
 
 ### 0. Run the code
-0. Clone this repository. Run the application by invoking `yarn start` in the project directory. This should launch a browser pointing to [http://localhost:3000](http://localhost:3000) with the project.
+Clone this repository. Run the application by invoking `yarn start` in the project directory. This should launch a browser pointing to [http://localhost:3000](http://localhost:3000) with the project.
 
 ### 1. Project structure
-1. The application is written in React, uses Redux for state management and Saga for side-effects middleware.
+The application is written in React, uses Redux for state management and Saga for side-effects middleware.
 
 The project has three pages. A static home page, and two 'dynamic' pages that use the redux store to render a list of band members and a list of albums. While the data is being fetched, a loading indicator appears.
 
