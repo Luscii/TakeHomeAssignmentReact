@@ -9,7 +9,10 @@ Your assignment is to improve te code base of this simple web application. You s
 ## Detailed Instructions
 
 ### 0. Run the code
-Clone this repository. Run the application by invoking `yarn start` in the project directory. This should launch a browser pointing to [http://localhost:3000](http://localhost:3000) with the project.
+- Clone this repository. 
+- Install the dependencies with yarn by running `yarn install`. 
+- Run the application by invoking `yarn start` in the project directory. 
+- This should launch a browser pointing to [http://localhost:3000](http://localhost:3000) with the project.
 
 ### 1. Project structure
 The application is written in React, uses Redux for state management and Saga for side-effects middleware.
