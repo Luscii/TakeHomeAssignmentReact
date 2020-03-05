@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function Loader({text}) {
-  return (<div class="loader">
+  return (<div className="loader">
     {text}
   </div>);
 }

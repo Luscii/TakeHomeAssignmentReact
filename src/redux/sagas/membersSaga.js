@@ -7,6 +7,7 @@ import {
 
 import { actionCreators as appActionCreators } from "../actions/appActions"
 
+// this is a mock method, in reality you would call an API to fetch the data asynchronously.
 function* getMembersFromAPI() {
   yield delay(2000);
   yield put(membersActionCreators.createMembersListUpdated(["John", "Paul", "George", "Ringo"]));

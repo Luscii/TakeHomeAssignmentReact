@@ -24,6 +24,11 @@ nav {
   border-style: groove;
   border-color: steelblue;
   width: 200px;
+
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  z-index: 10;
 }
 
 .album {

@@ -63,6 +63,7 @@ const albumsData = [
   },
 ]
 
+// this is a mock method, in reality you would call an API to fetch the data asynchronously.
 function* getAlbumsFromAPI() {
   yield delay(2000);
   yield put(albumsActionCreators.createAlbumsUpdated(albumsData));
@@ -74,6 +75,6 @@ function* fetchAlbums() {
   yield put(appActionCreators.createHideLoading());
 }
 
-export default function* usersSaga() {
+export default function* membersSaga() {
   yield takeEvery(albumsActions.requestAlbums, fetchAlbums);
 }
