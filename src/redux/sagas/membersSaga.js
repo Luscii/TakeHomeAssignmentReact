@@ -1,14 +1,16 @@
-import {takeEvery, put, delay} from "redux-saga/effects"
+import { takeEvery, put, delay } from "redux-saga/effects";
 
 import {
   actions as membersActions,
-  actionCreators as membersActionCreators,
+  actionCreators as membersActionCreators
 } from "../actions/membersActions";
+
+const membersData = ["John", "Paul", "George", "Ringo"];
 
 // this is a mock method, in reality you would call an API to fetch the data asynchronously.
 function* getMembersFromAPI() {
   yield delay(2000);
-  yield put(membersActionCreators.createMembersListUpdated(["John", "Paul", "George", "Ringo"]));
+  yield put(membersActionCreators.createMembersListUpdated(membersData));
 }
 
 function* fetchMembersList() {

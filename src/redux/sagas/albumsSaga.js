@@ -1,67 +1,65 @@
-import {takeEvery, put, delay} from "redux-saga/effects"
+import { takeEvery, put, delay } from "redux-saga/effects";
 
 import {
   actions as albumsActions,
-  actionCreators as albumsActionCreators,
+  actionCreators as albumsActionCreators
 } from "../actions/albumsActions";
-
-import { actionCreators as appActionCreators } from "../actions/appActions"
 
 const albumsData = [
   {
     title: "Please Please Me",
-    released: "March 1963",
+    released: "March 1963"
   },
   {
     title: "With the Beatles",
-    released: "November 1963",
+    released: "November 1963"
   },
   {
     title: "A Hard Day's Night",
-    released: "June 1964",
+    released: "June 1964"
   },
   {
     title: "Beatles for Sale",
-    released: "December 1964",
+    released: "December 1964"
   },
   {
     title: "Help!",
-    released: "August 1965",
+    released: "August 1965"
   },
   {
     title: "Rubber Soul",
-    released: "December 1965",
+    released: "December 1965"
   },
   {
     title: "Revolver",
-    released: "August 1966",
+    released: "August 1966"
   },
 
   {
     title: "Sgt. Pepper's Lonely Hearts Club Band",
-    released: "May 1967",
+    released: "May 1967"
   },
   {
     title: "Magical Mystery Tour",
-    released: "November 1967",
+    released: "November 1967"
   },
   {
     title: "The White Album",
-    released: "November 1968",
+    released: "November 1968"
   },
   {
     title: "Yellow Submarine",
-    released: "January 1969",
+    released: "January 1969"
   },
   {
     title: "Abbey Road",
-    released: "September 1969",
+    released: "September 1969"
   },
   {
     title: "Let It Be",
-    released: "May 1970",
-  },
-]
+    released: "May 1970"
+  }
+];
 
 // this is a mock method, in reality you would call an API to fetch the data asynchronously.
 function* getAlbumsFromAPI() {
@@ -70,9 +68,7 @@ function* getAlbumsFromAPI() {
 }
 
 function* fetchAlbums() {
-  yield put(appActionCreators.createDisplayLoading("Loading Albums..."));
   yield getAlbumsFromAPI();
-  yield put(appActionCreators.createHideLoading());
 }
 
 export default function* membersSaga() {

@@ -12,15 +12,16 @@ export default function Albums() {
 
   usePreloadResource(
     albums,
-    albumsActions.createRequestAlbums
+    albumsActions.createRequestAlbums,
+    "Loading Albums..."
   );
 
   return (
     <div>
       <h2>Albums</h2>
-      {!albums.hasLoaded && <Loader text={loading.text} />}
+      {loading.isLoading && <Loader text={loading.text} />}
 
-      {albums.hasLoaded  && (
+      {albums.hasLoaded && (
         <div>
           {albums.data.map(album => (
             <div className="album" key={album.title}>
