@@ -5,7 +5,7 @@ const initialState = {
   data: []
 };
 
-const members = (state = Object.assign({}, initialState), action) => {
+const members = (state = { ...initialState }, action) => {
   switch (action.type) {
     case actions.membersListUpdated:
       return {

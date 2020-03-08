@@ -5,7 +5,7 @@ const initialState = {
   data: []
 };
 
-const albums = (state = Object.assign({}, initialState), action) => {
+const albums = (state = { ...initialState }, action) => {
   switch (action.type) {
     case actions.albumsUpdated:
       return {
