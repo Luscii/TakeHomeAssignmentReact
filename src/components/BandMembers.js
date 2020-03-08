@@ -1,9 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import { actionCreators as membersActions } from "../redux/actions/membersActions";
-
 import usePreloadResource from "../hooks/preloadResource";
+import { actionCreators as membersActions } from "../redux/actions/membersActions";
 
 import Loader from "./Loader";
 

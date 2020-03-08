@@ -1,36 +1,36 @@
-import React from 'react';
+import React from "react";
+import { useSelector } from "react-redux";
 
-import { useSelector, useDispatch } from 'react-redux'
-import { actionCreators as albumsActions } from '../redux/actions/albumsActions'
+import usePreloadResource from "../hooks/preloadResource";
+import { actionCreators as albumsActions } from "../redux/actions/albumsActions";
 
-import Loader from './Loader';
+import Loader from "./Loader";
 
 export default function Albums() {
+  const loading = useSelector(state => state.app.loading);
+  const albums = useSelector(state => state.albums);
 
-  const loading = useSelector(state => state.app.loading)
-  const albums = useSelector(state => state.albums)
-
-  const dispatch = useDispatch();
-
-  if (!loading.isLoading && albums.length == 0) {
-    dispatch(albumsActions.createRequestAlbums());
-  }
+  usePreloadResource(
+    loading.isLoading,
+    albums,
+    albumsActions.createRequestAlbums
+  );
 
   return (
     <div>
-    <h2>Albums</h2>
-    { loading.isLoading && <Loader text={loading.text} /> }
+      <h2>Albums</h2>
+      {loading.isLoading && <Loader text={loading.text} />}
 
-    { albums.length > 0 &&
-      <div>
-      { albums.map((album) =>
-        <div className="album">
-          <h3>{album.title}</h3>
-          Released: {album.released}
+      {albums.length > 0 && (
+        <div>
+          {albums.map(album => (
+            <div className="album">
+              <h3>{album.title}</h3>
+              Released: {album.released}
+            </div>
+          ))}
         </div>
-    ) }
-      </div>
-    }
+      )}
     </div>
   );
 }
