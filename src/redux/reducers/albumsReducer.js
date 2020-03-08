@@ -1,17 +1,9 @@
 import { actions } from "../actions/albumsActions";
 
-const initialState = {
-  hasLoaded: false,
-  data: []
-};
-
-const albums = (state = { ...initialState }, action) => {
+const albums = (state = [], action) => {
   switch (action.type) {
     case actions.albumsUpdated:
-      return {
-        hasLoaded: true,
-        data: action.albums
-      };
+      return action.albums;
     default:
       return state;
   }

@@ -1,17 +1,9 @@
 import { actions } from "../actions/membersActions";
 
-const initialState = {
-  hasLoaded: false,
-  data: []
-};
-
-const members = (state = { ...initialState }, action) => {
+const members = (state = [], action) => {
   switch (action.type) {
     case actions.membersListUpdated:
-      return {
-        hasLoaded: true,
-        data: action.members
-      };
+      return action.members;
     default:
       return state;
   }
