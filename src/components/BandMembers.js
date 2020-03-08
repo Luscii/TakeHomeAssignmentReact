@@ -14,7 +14,7 @@ export default function BandMembers() {
   usePreloadResource(
     loading.isLoading,
     members,
-    membersActions.createRequestMembersList()
+    membersActions.createRequestMembersList
   );
 
   return (
