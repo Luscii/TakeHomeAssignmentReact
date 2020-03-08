@@ -1,12 +1,20 @@
-import {actions} from '../actions/membersActions';
+import { actions } from "../actions/membersActions";
 
-const members = (state = [], action) => {
+const initialState = {
+  hasLoaded: false,
+  data: []
+};
+
+const members = (state = Object.assign({}, initialState), action) => {
   switch (action.type) {
     case actions.membersListUpdated:
-      return action.members;
+      return {
+        hasLoaded: true,
+        data: action.members
+      };
     default:
       return state;
   }
-}
+};
 
 export default members;

@@ -1,14 +1,14 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
-const usePreloadResource = (isLoading, data, createRequestAction) => {
+const usePreloadResource = (resource, createRequestAction) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (!isLoading && data.length === 0) {
+    if (!resource.hasLoaded) {
       dispatch(createRequestAction());
     }
-  }, [createRequestAction, data.length, dispatch, isLoading]);
+  }, [createRequestAction, dispatch, resource.hasLoaded]);
 };
 
 export default usePreloadResource;

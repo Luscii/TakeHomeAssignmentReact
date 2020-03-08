@@ -11,7 +11,6 @@ export default function BandMembers() {
   const members = useSelector(state => state.members);
 
   usePreloadResource(
-    loading.isLoading,
     members,
     membersActions.createRequestMembersList
   );
@@ -19,11 +18,11 @@ export default function BandMembers() {
   return (
     <div>
       <h2>Band Members</h2>
-      {loading.isLoading && <Loader text={loading.text} />}
+      {!members.hasLoaded && <Loader text={loading.text} />}
 
-      {members.length > 0 && (
+      {members.data.length > 0 && (
         <ul>
-          {members.map(member => (
+          {members.data.map(member => (
             <li key={member}>{member}</li>
           ))}
         </ul>
