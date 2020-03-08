@@ -12,13 +12,14 @@ export default function BandMembers() {
 
   usePreloadResource(
     members,
-    membersActions.createRequestMembersList
+    membersActions.createRequestMembersList,
+    "Loading Band Members..."
   );
 
   return (
     <div>
       <h2>Band Members</h2>
-      {!members.hasLoaded && <Loader text={loading.text} />}
+      {loading.isLoading && <Loader text={loading.text} />}
 
       {members.hasLoaded && (
         <ul>

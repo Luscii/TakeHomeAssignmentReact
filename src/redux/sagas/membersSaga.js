@@ -5,8 +5,6 @@ import {
   actionCreators as membersActionCreators,
 } from "../actions/membersActions";
 
-import { actionCreators as appActionCreators } from "../actions/appActions"
-
 // this is a mock method, in reality you would call an API to fetch the data asynchronously.
 function* getMembersFromAPI() {
   yield delay(2000);
@@ -14,9 +12,7 @@ function* getMembersFromAPI() {
 }
 
 function* fetchMembersList() {
-  yield put(appActionCreators.createDisplayLoading("Loading Band Members..."));
   yield getMembersFromAPI();
-  yield put(appActionCreators.createHideLoading());
 }
 
 export default function* membersSaga() {
