@@ -1,7 +1,9 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 
 import { actionCreators as membersActions } from "../redux/actions/membersActions";
+
+import usePreloadResource from "../hooks/preloadResource";
 
 import Loader from "./Loader";
 
@@ -9,13 +11,11 @@ export default function BandMembers() {
   const loading = useSelector(state => state.app.loading);
   const members = useSelector(state => state.members);
 
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (!loading.isLoading && members.length === 0) {
-      dispatch(membersActions.createRequestMembersList());
-    }
-  }, [dispatch, loading.isLoading, members.length]);
+  usePreloadResource(
+    loading.isLoading,
+    members,
+    membersActions.createRequestMembersList()
+  );
 
   return (
     <div>
