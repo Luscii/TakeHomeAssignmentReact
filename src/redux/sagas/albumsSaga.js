@@ -1,4 +1,5 @@
-import { takeEvery, put, delay } from "redux-saga/effects";
+import { put, delay } from "redux-saga/effects";
+import { takeFirst } from "./utils/take-first";
 
 import {
   actions as albumsActions,
@@ -72,5 +73,5 @@ function* fetchAlbums() {
 }
 
 export default function* membersSaga() {
-  yield takeEvery(albumsActions.requestAlbums, fetchAlbums);
+  yield takeFirst(albumsActions.requestAlbums, fetchAlbums);
 }

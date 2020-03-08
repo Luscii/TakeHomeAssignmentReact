@@ -1,4 +1,5 @@
-import { takeEvery, put, delay } from "redux-saga/effects";
+import { put, delay } from "redux-saga/effects";
+import { takeFirst } from "./utils/take-first";
 
 import {
   actions as membersActions,
@@ -18,5 +19,5 @@ function* fetchMembersList() {
 }
 
 export default function* membersSaga() {
-  yield takeEvery(membersActions.requestMembersList, fetchMembersList);
+  yield takeFirst(membersActions.requestMembersList, fetchMembersList);
 }
