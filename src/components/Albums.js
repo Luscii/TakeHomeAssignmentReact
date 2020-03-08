@@ -16,10 +16,9 @@ export default function Albums() {
   return (
     <div>
       <h2>Albums</h2>
-
-      {albums.hasLoaded && (
+      {albums.length > 0 && (
         <div>
-          {albums.data.map(album => (
+          {albums.map(album => (
             <div className="album" key={album.title}>
               <h3>{album.title}</h3>
               Released: {album.released}

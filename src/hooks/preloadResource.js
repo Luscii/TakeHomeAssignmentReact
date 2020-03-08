@@ -11,7 +11,7 @@ const usePreloadResource = (
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (!resource.hasLoaded) {
+    if (resource.length === 0) {
       dispatch(appActionCreators.createDisplayLoading(loadingText));
       dispatch(createRequestAction());
     } else {
@@ -21,7 +21,7 @@ const usePreloadResource = (
     return () => {
       dispatch(appActionCreators.createHideLoading());
     };
-  }, [createRequestAction, dispatch, loadingText, resource.hasLoaded]);
+  }, [createRequestAction, dispatch, loadingText, resource.length]);
 };
 
 export default usePreloadResource;

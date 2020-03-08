@@ -16,10 +16,9 @@ export default function BandMembers() {
   return (
     <div>
       <h2>Band Members</h2>
-
-      {members.hasLoaded && (
+      {members.length > 0 && (
         <ul>
-          {members.data.map(member => (
+          {members.map(member => (
             <li key={member}>{member}</li>
           ))}
         </ul>
