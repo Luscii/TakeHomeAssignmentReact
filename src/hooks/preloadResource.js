@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 
 import { actionCreators as appActionCreators } from "../redux/actions/appActions";
 
-const usePreloadResource = (resource, createRequestAction, loadingText) => {
+const usePreloadResource = (resource, createRequestAction, loadingText = "Loading...") => {
   const dispatch = useDispatch();
 
   useEffect(() => {
