@@ -31,15 +31,9 @@ export default function App() {
           </nav>
 
           <Switch>
-            <Route path="/albums">
-              <Albums />
-            </Route>
-            <Route path="/members">
-              <BandMembers />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
+            <Route path="/" exact component={Home} />
+            <Route path="/members" component={BandMembers} />
+            <Route path="/albums" component={Albums} />
           </Switch>
         </div>
       </Router>
