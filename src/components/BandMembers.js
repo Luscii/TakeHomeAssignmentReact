@@ -20,7 +20,7 @@ export default function BandMembers() {
       <h2>Band Members</h2>
       {!members.hasLoaded && <Loader text={loading.text} />}
 
-      {members.data.length > 0 && (
+      {members.hasLoaded && (
         <ul>
           {members.data.map(member => (
             <li key={member}>{member}</li>

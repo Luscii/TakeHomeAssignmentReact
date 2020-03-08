@@ -1,12 +1,20 @@
-import {actions} from '../actions/albumsActions';
+import { actions } from "../actions/albumsActions";
 
-const albums = (state = [], action) => {
+const initialState = {
+  hasLoaded: false,
+  data: []
+};
+
+const albums = (state = Object.assign({}, initialState), action) => {
   switch (action.type) {
     case actions.albumsUpdated:
-      return action.albums;
+      return {
+        hasLoaded: true,
+        data: action.albums
+      };
     default:
       return state;
   }
-}
+};
 
 export default albums;

@@ -11,7 +11,6 @@ export default function Albums() {
   const albums = useSelector(state => state.albums);
 
   usePreloadResource(
-    loading.isLoading,
     albums,
     albumsActions.createRequestAlbums
   );
@@ -19,12 +18,12 @@ export default function Albums() {
   return (
     <div>
       <h2>Albums</h2>
-      {loading.isLoading && <Loader text={loading.text} />}
+      {!albums.hasLoaded && <Loader text={loading.text} />}
 
-      {albums.length > 0 && (
+      {albums.hasLoaded  && (
         <div>
-          {albums.map(album => (
-            <div className="album">
+          {albums.data.map(album => (
+            <div className="album" key={album.title}>
               <h3>{album.title}</h3>
               Released: {album.released}
             </div>
