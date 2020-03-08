@@ -4,10 +4,7 @@ import { useSelector } from "react-redux";
 import usePreloadResource from "../hooks/preloadResource";
 import { actionCreators as albumsActions } from "../redux/actions/albumsActions";
 
-import Loader from "./Loader";
-
 export default function Albums() {
-  const loading = useSelector(state => state.app.loading);
   const albums = useSelector(state => state.albums);
 
   usePreloadResource(
@@ -19,7 +16,6 @@ export default function Albums() {
   return (
     <div>
       <h2>Albums</h2>
-      {loading.isLoading && <Loader text={loading.text} />}
 
       {albums.hasLoaded && (
         <div>
